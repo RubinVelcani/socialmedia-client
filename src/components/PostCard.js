@@ -7,10 +7,17 @@ import { AuthContext } from '../context/auth'
 import LikeButton from './LikeButton'
 import DeleteButton from './DeleteButton'
 import InfoPopup from '../util/InfoPopup'
+import Avatars from '../util/avatars.json'
 
 function PostCard({ post: { body, createdAt, id, username, likeCount, commentCount, likes } }) {
 
   const { user } = useContext(AuthContext)
+
+  function getRandomAvatar(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
 
   return (
     <Card fluid>
@@ -18,7 +25,7 @@ function PostCard({ post: { body, createdAt, id, username, likeCount, commentCou
         <Image
           floated='right'
           size='mini'
-          src='https://react.semantic-ui.com/images/avatar/large/jenny.jpg'
+          src={Avatars.avatars[getRandomAvatar(0, 14)]}
         />
         <Card.Header>{username}</Card.Header>
         <Card.Meta as={Link} to={`/posts/${id}`}>{moment(createdAt).fromNow(true)}</Card.Meta>
