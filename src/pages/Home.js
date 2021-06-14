@@ -18,17 +18,17 @@ function Home() {
     <Grid columns={3}>
       <Grid.Row className="page-title">
         <h1>Recent Posts</h1>
+          {user && (
+                      <Grid.Column mobile={16} tablet={8} largeScreen={5} style={{ marginBottom: 40 }}>
+                      <PostForm />
+                      </Grid.Column>
+                    )}
       </Grid.Row>
       <Grid.Row>
         {loading ? (
           <h1>Loading posts..</h1>
         ) : (
             <Transition.Group>
-          {user && (
-                      <Grid.Column mobile={16} tablet={8} largeScreen={5} style={{ marginBottom: 40 }}>
-                      <PostForm />
-                      </Grid.Column>
-                    )}
               {posts &&
                 posts.map((post) => (
                   <Grid.Column mobile={16} tablet={8} largeScreen={5} key={post.id} style={{ marginBottom: 20 }}>
