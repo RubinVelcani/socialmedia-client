@@ -19,7 +19,7 @@ function Home() {
       <Grid.Row className="page-title">
         <h1>Recent Posts</h1>
     {user && (
-                      <Grid.Column mobile={16} tablet={8} computer={8} largescreen={5} widescreen={5} style={{ marginBottom: 40 }}>
+                      <Grid.Column mobile={16} tablet={8} computer={5} widescreen={5} style={{ marginBottom: 40 }}>
                       <PostForm />
                       </Grid.Column>
                     )}
@@ -30,7 +30,7 @@ function Home() {
             <Transition.Group>
               {posts &&
                 posts.map((post) => (
-                  <Grid.Column mobile={16} tablet={8} computer={8} largescreen={5} widescreen={5} key={post.id} style={{ marginBottom: 20 }}>
+                  <Grid.Column mobile={16} tablet={8} computer={5} widescreen={5} key={post.id} style={{ marginBottom: 20 }}>
                     <PostCard post={post} />
                   </Grid.Column>
                 ))}
