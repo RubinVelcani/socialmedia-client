@@ -57,7 +57,7 @@ function SinglePost(props) {
     postMarkup = (
       <Grid>
         <Grid.Row>
-          <Grid.Column width={2} style={{paddingRight: 0 !important}}>
+          <Grid.Column width={2} style={{paddingRight: 0}}>
             <Image
               src="https://react.semantic-ui.com/images/avatar/large/molly.png"
               float="right"
