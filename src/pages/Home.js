@@ -24,14 +24,14 @@ function Home() {
           <h1>Loading posts..</h1>
         ) : (
             <Transition.Group>
-              {posts &&
-                posts.map((post) => (
-                  <Grid.Column mobile={16} tablet={8} largeScreen={5} key={post.id} style={{ marginBottom: 20 }}>
-                    {user && (
-                      <Grid.Column>
+          {user && (
+                      <Grid.Column mobile={16} tablet={8} largeScreen={5}>
                       <PostForm />
                       </Grid.Column>
                     )}
+              {posts &&
+                posts.map((post) => (
+                  <Grid.Column mobile={16} tablet={8} largeScreen={5} key={post.id} style={{ marginBottom: 20 }}>
                     <PostCard post={post} />
                   </Grid.Column>
                 ))}
