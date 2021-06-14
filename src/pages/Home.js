@@ -20,11 +20,6 @@ function Home() {
         <h1>Recent Posts</h1>
       </Grid.Row>
       <Grid.Row>
-        {user && (
-          <Grid.Column>
-            <PostForm />
-          </Grid.Column>
-        )}
         {loading ? (
           <h1>Loading posts..</h1>
         ) : (
@@ -32,6 +27,11 @@ function Home() {
               {posts &&
                 posts.map((post) => (
                   <Grid.Column mobile={16} tablet={8} largeScreen={5} key={post.id} style={{ marginBottom: 20 }}>
+                    {user && (
+                      <Grid.Column>
+                      <PostForm />
+                      </Grid.Column>
+                    )}
                     <PostCard post={post} />
                   </Grid.Column>
                 ))}
