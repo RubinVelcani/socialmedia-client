@@ -25,7 +25,7 @@ function Home() {
         ) : (
             <Transition.Group>
           {user && (
-                      <Grid.Column mobile={16} tablet={8} computer={8} largeScreen={5}>
+                      <Grid.Column mobile={16} tablet={8} computer={8} largeScreen={5} style={{ marginBottom: 40 }}>
                       <PostForm />
                       </Grid.Column>
                     )}
